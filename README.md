@@ -29,14 +29,67 @@ The dataset as such was clean and required a little bit of tidying up.
 There were some basic cleaning operations performed for this project. It involved removing rows that had ABV and IBU as an empty value. Additionally, I merged the two datasets above to form one dataframe. The key to joining the dataset was the brewery_id.
 
 ## Analysis:
+### Exploratory
+I would first like to explore the relation between ABV and IBU as well as their distribution for it.
+* IBU and ABV distributions
+* Serving Size distributions
+
+
+
+### Explanatory
 Coming to the main part of this project, the main questions for the analysis were as follows:
 * What are the most common Beer Styles?
-* Which States are the most popular for Breweries?
-* What composition of ABV and IBU does a beer have?
-* What are the most common serving size?
+* Which States are the most popular for craft Beers?
 
-Coming to the first question, I have ordered the top 10 beer styles by count when looking at the whole country, following was the graph for it:
+
+
+#### Coming to the first question, I would like to know the top beer styles:
+
+I have ordered the top 10 beer styles by count when looking at the whole country, following was the graph for it:
+
 ![image](https://user-images.githubusercontent.com/32137335/116271154-b96a3d80-a74d-11eb-8b62-8707f16420c7.png)
+
+We see one of the most common types of beer styles in United States is American IPA followed by American Pale Ale and then the American Amber / Red Ale.
+
+Let's see what the ABV vs IBU distribution for the top 10 beers look like:
+
+![image](https://user-images.githubusercontent.com/32137335/116288655-ba0bcf80-a75f-11eb-8168-8d6fc1bc45a0.png)
+
+Interestingly, the top 3 beer style look like their ABV and IBU are highly correlated (i.e. IBU increases with increase in ABV or vice versa) but for the rest, that correlation drops considerably. For example, the vegetable beer although high in alcohol content doesn't seem to have a high IBU.
+
+I would be more interested in the top 3 beers to better answer my question though. I would lieke to compare them on the same graph. Let's see what it looks like:
+
+![image](https://user-images.githubusercontent.com/32137335/116276568-a443dd80-a752-11eb-9d63-516630ca20aa.png)
+
+This is an interesting graph, where we see what composition of ABV and IBU does each of the top 3 beer styles have. American IPA generally is seen to have a high IBU as well as ABV.
+
+Let's look at the most common serving size for the top 10 beer styles:
+
+![image](https://user-images.githubusercontent.com/32137335/116276972-07357480-a753-11eb-9308-436ab9b9ad55.png)
+
+So the ideal serving size for a beer is 12 ounces or 16 ounces.
+
+So to answer the first question, the most common beer style is an American IPA with a high ABV and IBU served in either 12 ounces or 16 ounces. 
+
+#### But this does not pain the whole picture. We would also want to know which states the beer is popular. So coming to the second question, Which states are most popular for craft beers?
+
+Let's first see the distribution of beers across the states. We will only consider the top 10 states by count of beers available there:
+
+![image](https://user-images.githubusercontent.com/32137335/116277627-aa868980-a753-11eb-8eec-14a1eba4c767.png)
+
+Seems like Colorado is one of the most popular states for craft beers followed by California and then Indiana. Let's see if there is anything from the ABV or IBU stand point that differs for each of this state:
+
+![image](https://user-images.githubusercontent.com/32137335/116286147-e1ad6880-a75c-11eb-8057-429929a87725.png)
+
+There doesn't seem to be a lot of difference between each state. Seems like the ABV vs IBU is consistent across the board. Let's see the top 5 beer styles across these top 10 states:
+
+![image](https://user-images.githubusercontent.com/32137335/116289398-74033b80-a760-11eb-8a71-ebf20ce79f54.png)
+
+This seems very interesting, even though American IPA is the most famous beer type across the country, seems like Colorado prefers American Pale Ale over the American IPA. In all the other top 10 states, American IPA is preferred over the rest.
+
+
+
+All in all, depending on the State, the beer styles differ. The serving size would make a huge difference as well.
 
 
 
