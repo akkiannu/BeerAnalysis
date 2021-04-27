@@ -36,7 +36,8 @@ Coming to the main part of this project, the main questions for the analysis wer
 * What are the most common serving size?
 
 Coming to the first question, I have ordered the top 10 beer styles by count when looking at the whole country, following was the graph for it:
-![image](https://user-images.githubusercontent.com/32137335/116268265-27f9cc00-a74b-11eb-87e9-082318679ad5.png)
+![image](https://user-images.githubusercontent.com/32137335/116271154-b96a3d80-a74d-11eb-8b62-8707f16420c7.png)
+
 
 
 
