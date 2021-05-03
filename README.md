@@ -34,6 +34,28 @@ I would first like to explore the relation between ABV and IBU as well as their 
 * IBU and ABV distributions
 * Serving Size distributions
 
+#### IBU and ABV Distributions
+
+
+![image](https://user-images.githubusercontent.com/32137335/116833893-aa3e2200-ab89-11eb-99fd-424bb0644fab.png)
+
+We can clearly see that the ABV Distibution is that of a normal distribution.
+
+Whereas the IBU distribution is a bimodal distribution.
+
+![image](https://user-images.githubusercontent.com/32137335/116833874-97c3e880-ab89-11eb-9b35-cdc80d224ec2.png)
+
+
+When we plot the ABU vs IBU, we see a that are highly correlated to one another when we change the x scale to a log scale.
+
+![image](https://user-images.githubusercontent.com/32137335/116833947-f7ba8f00-ab89-11eb-98f6-2a053a5143b5.png)
+
+#### Serving Size Distribution
+
+Majority of the beers we see are being served in either12 ounces or 16 ounces as we can see in the image below:
+![image](https://user-images.githubusercontent.com/32137335/116833990-246ea680-ab8a-11eb-86e6-cfab496d4f95.png)
+
+It would be interesting to see the above three variables in combination with the beer styles and state of origination.
 
 
 ### Explanatory
