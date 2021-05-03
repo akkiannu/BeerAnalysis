@@ -1,10 +1,13 @@
 # Craft Beer Analysis
+## by Akshay Gupta
+
+## Dataset
 
 For this project, I have gathered the data from Kaggle.com. Link for the database: https://www.kaggle.com/nickhould/craft-cans
 
 I am a big beer lover, so this project was an eye opener for me as well. Although I started my beer journey with Lager, I have grown to like IPA's a lot. It is just one of those things where your taste buds evolve slowly and steadily. 
 
-When getting into this project, one of the biggest question I had for myself was, if I had to be a consultant for a brewery who is looking to expand their business in a new state or city, what would I advice them? This is the question I would be trying to answer throughout this project. Right from which beer style to how much ABV and IBU (explained below) to how much of a serving size is ideal for a specific market.
+When getting into this project, one of the biggest question I had for myself was, how does the bitterness of the alcohol correlate with the alcohol percent of the beer. Throughtout this analysis, I have tried answering that question.
 
 ###### ABV: 
 Alcohol by volume (abbreviated as ABV, abv, or alc/vol) is a standard measure of how much alcohol (ethanol) is contained in a given volume of an alcoholic beverage (expressed as a volume percent). It is defined as the number of millilitres (mL) of pure ethanol present in 100 mL of solution at 20 °C (68 °F).
@@ -16,108 +19,94 @@ Additionally, to understand more about the beer styles, craftbeers has explained
 
 So we have established our base and understanding of the common termonologies, let's get to data exploration.
 
-## Gathering, Assessing & Cleaning:
-### Gathering:
+### Gathering, Assessing & Cleaning:
+#### Gathering:
 There are two separate datasets:
 1. beers.csv
 2. breweries.csv
 
 Both of these datasets were downloaded from the Kaggle link above on to my local drive.
 
-### Assessing and Cleaning:
+#### Assessing and Cleaning:
 The dataset as such was clean and required a little bit of tidying up.
 There were some basic cleaning operations performed for this project. It involved removing rows that had ABV and IBU as an empty value. Additionally, I merged the two datasets above to form one dataframe. The key to joining the dataset was the brewery_id.
 
-## Analysis:
-### Exploratory
-I would first like to explore the relation between ABV and IBU as well as their distribution for it.
-* IBU and ABV distributions
-* Serving Size distributions
+## Summary of Findings:
+### Top 10 Beer Styles:
 
-#### IBU and ABV Distributions
+I first tried determining the top 10 Beer Styles based on counts in the dataset that I had. Following is the distribution of the same:
 
-![image](https://user-images.githubusercontent.com/32137335/116834187-f0e04c00-ab8a-11eb-8b25-053eca114a1d.png)
+![image](https://user-images.githubusercontent.com/32137335/116932101-da400080-ac2f-11eb-943e-071f17a04704.png)
 
-We can clearly see that the ABV Distibution is that of a normal distribution.
+### Top 10 States for Breweries:
 
-Whereas the IBU distribution is a bimodal distribution.
+As per the number of beer counts, next I wanted to determine the top 10 States:
 
-![image](https://user-images.githubusercontent.com/32137335/116834191-f63d9680-ab8a-11eb-89d9-7c60df0fed45.png)
+![image](https://user-images.githubusercontent.com/32137335/116932213-f80d6580-ac2f-11eb-9475-e8095841819d.png)
 
-When we plot the ABU vs IBU, we see a that are highly correlated to one another when we change the x scale to a log scale.
+### Serving Size:
 
-![image](https://user-images.githubusercontent.com/32137335/116834206-00f82b80-ab8b-11eb-8c94-f080019c13b4.png)
+This was the distribution of the serving size:
 
-#### Serving Size Distribution
+![image](https://user-images.githubusercontent.com/32137335/116932297-0fe4e980-ac30-11eb-8def-5b2bd838b2c8.png)
 
-Majority of the beers we see are being served in either12 ounces or 16 ounces as we can see in the image below:
-
-![image](https://user-images.githubusercontent.com/32137335/116834218-0e151a80-ab8b-11eb-9ac7-201a11ce78b6.png)
-
-It would be interesting to see the above three variables in combination with the beer styles and state of origination.
+We can clearly see the two main serving portions are 12 Oz. and 16 Oz.
 
 
-### Explanatory
-Coming to the main part of this project, the main questions for the analysis were as follows:
-* What are the most common Beer Styles?
-* Which States are the most popular for craft Beers?
+### IBU vs Serving Size:
+
+Going by the following boxplot, it is fairly safe to assume that serving size does not determine the IBU of a beer.
+
+![image](https://user-images.githubusercontent.com/32137335/116932673-8da8f500-ac30-11eb-9d76-2bf3933838d4.png)
 
 
+### ABV vs Serving Size:
 
-#### Coming to the first question, I would like to know the top beer styles:
+Similarly, looks like serving size does not determine the alcohol by volume as well of a particular beer.
 
-I have ordered the top 10 beer styles by count when looking at the whole country, following was the graph for it:
+### Serving Size in Top 10 States:
 
-![image](https://user-images.githubusercontent.com/32137335/116271154-b96a3d80-a74d-11eb-8b62-8707f16420c7.png)
+Having established the top 10 states, we now look at the serving size in the top 10 states by count. Following is the distribution of the same.
 
-We see one of the most common types of beer styles in United States is American IPA followed by American Pale Ale and then the American Amber / Red Ale.
+![image](https://user-images.githubusercontent.com/32137335/116932855-c9dc5580-ac30-11eb-9017-747775a58e13.png)
 
-Let's see what the ABV vs IBU distribution for the top 10 beers look like:
+It seems like some state prefer 16 Oz. over 12 Oz.. States like Indiana specifically show this kind of behaviour.
 
-![image](https://user-images.githubusercontent.com/32137335/116288655-ba0bcf80-a75f-11eb-8168-8d6fc1bc45a0.png)
+### Serving Size for Top 10 Beer Styles:
 
-Interestingly, the top 3 beer style look like their ABV and IBU are highly correlated (i.e. IBU increases with increase in ABV or vice versa) but for the rest, that correlation drops considerably. For example, the vegetable beer although high in alcohol content doesn't seem to have a high IBU.
+Having previously established the top 10 beer styles, we now see the serving size of these beers:
 
-I would be more interested in the top 3 beers to better answer my question though. I would lieke to compare them on the same graph. Let's see what it looks like:
+![image](https://user-images.githubusercontent.com/32137335/116933215-3e16f900-ac31-11eb-9e39-45aa3dd30f7a.png)
 
-![image](https://user-images.githubusercontent.com/32137335/116276568-a443dd80-a752-11eb-9d63-516630ca20aa.png)
+One interesting finding here is that the American Porter is preferred in a 16 Oz. serving vs. a 12 Oz. serving.
 
-This is an interesting graph, where we see what composition of ABV and IBU does each of the top 3 beer styles have. American IPA generally is seen to have a high IBU as well as ABV.
+## Key Insights:
 
-Let's look at the most common serving size for the top 10 beer styles:
+### Relation between ABV and IBU (ABV vs. IBU):
 
-![image](https://user-images.githubusercontent.com/32137335/116276972-07357480-a753-11eb-9308-436ab9b9ad55.png)
+ABV and IBU seem to be highly correlated, i.e. if one increases the other increases as well. This is looking at the overall population.
 
-So the ideal serving size for a beer is 12 ounces or 16 ounces.
+![image](https://user-images.githubusercontent.com/32137335/116932508-5c302980-ac30-11eb-8d81-498362e7a6b6.png)
 
-So to answer the first question, the most common beer style is an American IPA with a high ABV and IBU served in either 12 ounces or 16 ounces. 
+### ABV vs. IBU for Top 10 Beers:
 
-#### But this does not pain the whole picture. We would also want to know which states the beer is popular. So coming to the second question, Which states are most popular for craft beers?
+What was interesting here is that the ABV and IBU composition changes based on the beer style. This is evident when we look at the distribution of the ABV vs. IBU of American Pale Wheat Ale. The IBU is constant even when the ABV is increasing.
 
-Let's first see the distribution of beers across the states. We will only consider the top 10 states by count of beers available there:
+![image](https://user-images.githubusercontent.com/32137335/116933568-b67dba00-ac31-11eb-948d-d1571eb38d39.png)
 
-![image](https://user-images.githubusercontent.com/32137335/116277627-aa868980-a753-11eb-8eec-14a1eba4c767.png)
+We can say that Beer Style is one of the key factors in defining the composition of IBU and ABV.
 
-Seems like Colorado is one of the most popular states for craft beers followed by California and then Indiana. Let's see if there is anything from the ABV or IBU stand point that differs for each of this state:
+### ABV vs. IBU for Top 3 Beers:
 
-![image](https://user-images.githubusercontent.com/32137335/116286147-e1ad6880-a75c-11eb-8057-429929a87725.png)
+Reiterating the above finding, we can clearly see the differing composition of IBU and IBV when we consider the top 3 beers. This does not even consider the American Pale Wheat Ale, whose composition was again very different.
 
-There doesn't seem to be a lot of difference between each state. Seems like the ABV vs IBU is consistent across the board. Let's see the top 5 beer styles across these top 10 states:
+![image](https://user-images.githubusercontent.com/32137335/116933705-e9c04900-ac31-11eb-8bc1-74f35bdf9687.png)
 
-![image](https://user-images.githubusercontent.com/32137335/116289398-74033b80-a760-11eb-8a71-ebf20ce79f54.png)
+### ABV vs. IBU for Top 10 Beer States:
 
-This seems very interesting, even though American IPA is the most famous beer type across the country, seems like Colorado prefers American Pale Ale over the American IPA. In all the other top 10 states, American IPA is preferred over the rest.
+Interstingly, the origin of the beer also makes a slight difference in the composition of the beer. The type of beer doesn't matter here. 
 
-
-
-All in all, depending on the State, the beer styles differ. The serving size would make a huge difference as well.
-
-
-
-
-
-
-
+![image](https://user-images.githubusercontent.com/32137335/116933899-3146d500-ac32-11eb-8583-91952b749f1f.png)
 
 
 
